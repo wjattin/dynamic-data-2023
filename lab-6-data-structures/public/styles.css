@@ -1,15 +1,52 @@
 @import url('https://fonts.googleapis.com/css2?family=Montserrat:wght@400;600&family=Oswald:wght@700&display=swap');
 
-.monserrat { font-family: 'Montserrat', sans-serif; font-weight: 400; }
+.montserrat { font-family: 'Montserrat', sans-serif; font-weight: 400; }
 
-.monserrat-bold { font-family: 'Montserrat', sans-serif; font-weight: 600; }
+.montserrat-bold { font-family: 'Montserrat', sans-serif; font-weight: 600; }
 
 .oswald { font-family: 'Oswald', sans-serif; font-weight: 700;}
 
 
-body {
-    background-color: #CCCCCC;
-}
 .white-bg {
     background-color: #FFFFFF;
+}
+
+.primary-color {
+    color: #13073A;
+}
+.primary-color-light {
+   color: #403075
+}
+
+.accordion-button:not(.collapsed) {
+    color: #FFFFAA;
+    background-color: #403075;
+  }
+
+.primary-color-bg {
+    background-color: #13073A;
+}
+.primary-color-light-bg {
+   background-color: #403075
+}
+.secondary-color, nav .secondary-color-light:hover {
+    color: #AAAA39;
+}
+.secondary-color-light {
+    color: #FFFFAA;
+}
+.secondary-color-bg {
+    background-color: #AAAA39;
+}
+.secondary-color-light-bg {
+    background-color: #FFFFAA;
+}
+
+/* Remove owl-nav previous and next buttons*/
+.owl-nav {
+    display: none;
+}
+
+.section-divider {
+    padding: 1rem;
 }
