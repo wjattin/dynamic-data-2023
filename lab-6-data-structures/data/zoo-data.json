@@ -1,5 +1,6 @@
 {
     "title":"Zoo Miami",
+    "description":"Lorem, ipsum dolor sit amet consectetur adipisicing elit. Quo laborum dolor sequi, non delectus quos esse officia doloremque ipsa, aliquam optio maiores, asperiores ea eligendi temporibus magnam cupiditate ex quae.",
     "slideshow":[
         "/img/slides/skyline.jpg",
         "/img/slides/bayside.jpg",
@@ -14,7 +15,8 @@
                 "Service 2",
                 "Service 3"
             ],
-            "image":"/img/homepage/transportation.jpg"
+            "image":"/img/homepage/transportation.jpg",
+            "show":"show"
         },
         {
             "title":"Miami Tours",

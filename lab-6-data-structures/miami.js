@@ -17,30 +17,34 @@ app.set('view engine','handlebars')
 //ends handlebar configuration
 
 const port = process.env.port || 3000
+//require gallery outside the view because we will use the same in all get requests
+const gallery = require('./data/gallery.json')
 //Routes go before 404 and 500
 app.get('/',(req,res)=>{
     var data = require('./data/home-data.json')
-    res.render('page',{ data })
+    res.render('page',{ data, gallery })
 })
 
 app.get('/zoo',(req,res)=>{
     var data = require('./data/zoo-data.json')
-    res.render('page',{ data })
+    res.render('page',{ data,gallery })
 })
 
-app.get('/about',(req,res)=>{
-    res.render('about',{ 
-        title:"About Miami",
-        pageTitle:"About Miami Travel",
-        image:"miami-1.jpg",
-        description:"Miami is a beautiful city" 
-    })
+app.get('/beach',(req,res)=>{
+    var data = require('./data/beach-data.json')
+    res.render('page',{ data,gallery })
+})
+
+app.get('/southpoint',(req,res)=>{
+    var data = require('./data/southpoint-data.json')
+    res.render('page',{ data,gallery })
+})
+app.get('/hardrock',(req,res)=>{
+    var data = require('./data/hardrock-data.json')
+    res.render('page',{ data,gallery })
 })
 //This generates an error because the parameter names don't match
-// res should be response 
-app.get('/nightlife',(req,res)=>{
-    res.render('nightlife')
-})
+
 
 //Error handling ->  app.use() basic express route 
 app.use((req,res) => {
