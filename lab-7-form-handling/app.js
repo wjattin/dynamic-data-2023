@@ -21,6 +21,8 @@ app.set('view engine','handlebars')
 
 const port = process.env.port || 3000
 
+const emails = []
+
 app.get('/',(req,res)=>{
     res.render('page',{req})
 })
@@ -32,12 +34,22 @@ app.get('/mad',(req,res)=>{
 app.get('/madprocess',(req,res)=>{
    res.render('madprocess',{req}) 
 })
+//newsletter section
+
 
 app.get('/newsletter-signup', handler.newsletterSignup)
 
+app.get('/newsletter/list', handler.newsletterSignupList)
+
+app.get('/newsletter/details/:email',handler.newsletterUser)
+
+app.get('/newsletter/delete/:email',handler.newsletterUserDelete)
+
 app.post('/newsletter-signup/process', handler.newsletterSignupProcess)
 
-
+app.get('/newsletter/thankyou',(req,res) =>{
+    res.render('thankyou')
+})
 //Error handling ->  app.use() basic express route 
 app.use((req,res) => {
     res.status(404)
