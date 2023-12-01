@@ -5,7 +5,11 @@
     <li><strong>Address: </strong> 
     {{this.address}}<br>
     {{this.city}}, {{this.state}}<br>
-    {{this.zip}} 
+    {{this.zip}}
+    {{#each this.images}} 
+    <img src="{{this.src}}" alt="">
+    {{/each}}
      </li>
 </ul>
 {{/each}}
+

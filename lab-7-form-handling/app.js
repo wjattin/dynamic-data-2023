@@ -5,11 +5,11 @@ const expressHandlebars = require('express-handlebars')
 
 const app = express()
 
-const handler = require('./lib/handler')
-
 const bodyParser = require('body-parser')
 
 app.use(bodyParser.urlencoded({ extended: true}))
+
+const handler = require('./lib/handler')
 
 //configure our express app to use handlebars
 app.engine('handlebars', expressHandlebars.engine({
@@ -35,17 +35,24 @@ app.get('/madprocess',(req,res)=>{
    res.render('madprocess',{req}) 
 })
 //newsletter section
-
+//https://elements.envato.com/web-templates/shopping+html
 
 app.get('/newsletter-signup', handler.newsletterSignup)
+
+app.post('/newsletter-signup/process', handler.newsletterSignupProcess)
 
 app.get('/newsletter/list', handler.newsletterSignupList)
 
 app.get('/newsletter/details/:email',handler.newsletterUser)
 
-app.get('/newsletter/delete/:email',handler.newsletterUserDelete)
+app.get('/product/:id',handler.showProduct)
 
-app.post('/newsletter-signup/process', handler.newsletterSignupProcess)
+app.get('/category/:category',handler.showCategory)
+
+app.post('/cart', handler.addToCartProcess)
+
+
+app.get('/newsletter/delete/:email',handler.newsletterUserDelete)
 
 app.get('/newsletter/thankyou',(req,res) =>{
     res.render('thankyou')
